@@ -1,38 +1,281 @@
-.App {
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: white;
+  z-index: 5;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 200px;
+}
+.header__nav {
+  background-color: rgb(3, 3, 59);
+  color: white;
+}
+.header_container {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 0.6em;
+}
+
+.nav_container {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+}
+.nav_icon {
+  position: relative;
+  width: 26px;
+  height: 30px;
+  transform: rotate(0deg);
+  cursor: pointer;
+  margin-right: 0.8rem;
+}
+.nav_icon > span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: white;
+  transform: rotate(0deg);
+  transition: transform 0.25s ease-in-out;
+}
+.nav_icon > span:nth-child(1) {
+  top: 6px;
+  transition: transform 0.25s ease-in-out;
+}
+.nav_icon > span:nth-child(2) {
+  top: 14px;
+  transition: transform 0.25s ease-in-out;
+}
+.nav_icon > span:nth-child(3) {
+  top: 22px;
+  transition: transform 0.25s ease-in-out;
+}
+.header_logo {
+  align-self: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cart__signin {
+  display: flex;
+  align-self: center;
+}
+.cart__signin :nth-child(1) {
+  margin-right: 1em;
+}
+.cart img {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+.search__logo {
+  margin: 0.2em auto;
+  width: 96%;
+}
+.search_input {
+  padding: 0.5rem;
+  border-radius: 4px;
+  outline: none;
+  border: 0;
+  width: 90%;
+  margin-bottom: 0.8rem;
+}
+.cart_container {
+  background-color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: black;
+  padding: 1rem;
+  z-index: 100;
+  display: none;
+}
+.cart_container.cart-open {
+  display: block;
+  z-index: 100;
+}
+.cart__close {
+  position: absolute;
+  top: 1%;
+  right: 3%;
+  background-color: red;
+  border: 0;
+  padding: 0.4em;
+  font-size: 1rem;
+}
+.cart_subcontainer {
+  position: relative;
+}
+.cart_empty {
+  width: 90%;
+  font-size: 1rem;
+  margin-top: 2em;
+  text-align: center;
+  color: rgb(100, 66, 66);
+}
+.sub_cart {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+.cart_title {
+  flex: 3;
+  color: black;
+  text-align: left;
+}
+.cart_btn_container {
+  display: flex;
+  flex-flow: row;
+  flex: 1;
+  justify-content: center;
+}
+.cart_btn_container button {
+  padding: 3px;
+  align-self: center;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.cart_qty {
+  border: 0;
+  background-color: transparent;
+}
+.sub_total {
+  align-self: center;
+  font-size: 1.1rem;
+  padding: 1rem;
+  flex: 1;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.cart_total {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-flow: row;
+  justify-content: space-between;
+  width: 94%;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+.menu_container {
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  height: 32rem;
+  transform: translateX(-60rem);
+  transition: transform 0.5s linear 5ms;
+  z-index: 50;
+}
+@media (min-width: 50em) {
+  .menu_container.large {
+    transform: translateX(-90rem);
+  }
+}
+.menu_container.is-open {
+  transform: translateX(0rem);
+}
+.menu {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  justify-content: space-around;
+  top: 3rem;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  z-index: 100;
+  border-radius: 10px;
+}
+.menu li a {
+  padding: 0.7rem 3rem;
+  font-size: 1.1rem;
+  color: rgb(3, 3, 59);
+  font-weight: 600;
+}
+.menu li a:hover {
+  border-bottom: 2px solid rgb(236, 122, 81);
+}
+.signIn__signUp__container {
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  display: block;
+  text-align: center;
+  border-bottom: 2px solid #eee;
+  letter-spacing: 0.9;
+}
+.signIn__signUp {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+.signIn__signUp > button {
+  margin-top: 0.5rem;
+  padding: 0.3rem 1.7rem;
+  color: black;
+  background-color: rgb(241, 220, 28);
+  border: 0;
+  border-radius: 5px;
+}
+.product_container {
+  margin-top: 0;
+  width: 96%;
+  margin: 0rem auto;
+  z-index: 10;
+}
+.productList_container {
+  width: 98%;
+  margin: 0.5em auto;
+
+  border-bottom: 1px solid #ccc;
+}
+.productList_subcontainer {
+  display: flex;
+  flex-flow: row;
+}
+.productList_container img {
+  width: 110px;
+  max-height: 120px;
+  margin: 0 0.9rem 0 0;
+}
+.title {
+  font-size: 1.1rem;
+}
+.discount_price {
+  margin-top: 0.5rem;
+}
+
+.productList_container button {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border: 0;
+  padding: 0.4rem 1rem;
+  background-color: rgb(40, 40, 119);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  width: 8em;
+  margin-bottom: 5px;
+  outline: none;
 }
