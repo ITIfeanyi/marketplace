@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import EmptyHeader from "../Header/EmptyHeader";
 import EmptyFooter from "../Footer/EmptyFooter";
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <div>
       <div className={styles.signIn_container}>
@@ -13,13 +13,17 @@ const SignIn = () => {
           <h3 className={styles.welcome_msg}>Welcome </h3>
           <h3>
             {" "}
-            <Link className={styles.link} to='/sign-up'>
-              Sign Up
+            <Link className={styles.link} to='/sign-in'>
+              Sign In
             </Link>
           </h3>
         </div>
         <form>
           <div className={styles.form_container}>
+            <div className={styles.form_name}>
+              <label htmlFor='name'>Name</label>
+              <input type='text' name='name' placeholder='Ifeanyi Igweh' />
+            </div>
             <div className={styles.form_email}>
               <label htmlFor=''>Email</label>
               <input
@@ -52,4 +56,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

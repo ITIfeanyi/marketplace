@@ -1,0 +1,47 @@
+.menu_container {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  z-index: 50;
+}
+.faBars {
+  font-size: 1.4rem;
+}
+.closeBtn_container {
+  font-size: 1.3rem;
+  padding: 0.7rem;
+  margin-bottom: 1em;
+  color: rgb(3, 3, 59);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  /* background-color: white; */
+}
+.menu li .links {
+  border-radius: 5px;
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.7rem 3rem;
+  font-size: 1.1rem;
+  color: rgb(3, 3, 59);
+  background-color: rgb(241, 220, 28);
+}
+.social {
+  width: 40%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social img {
+  width: 30px;
+}

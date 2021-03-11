@@ -1,18 +1,37 @@
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
 import Product from "./components/Product/Product";
-import Header from "./components/Header/Header";
-import SignIn from "./components/SignInSignUp/SignIn";
+import Cart from "./components/Cart/Cart";
 import ProductContextProvider from "./components/ProductContext";
+import SignUp from "./components/SignInSignUp/SignUp";
+import SignIn from "./components/SignInSignUp/SignIn";
+import Contact from "./components/ContactPage/Contact";
 
 function App() {
   return (
-    <ProductContextProvider>
-      <div className='App'>
-        <Header />
-        <SignIn />
-        <Product />
-      </div>
-    </ProductContextProvider>
+    <>
+      <ProductContextProvider>
+        <div className='App'></div>
+
+        <Switch>
+          <Route exact path='/'>
+            <Product />
+          </Route>
+          <Route path='/cart'>
+            <Cart />
+          </Route>
+          <Route path='/sign-up'>
+            <SignUp />
+          </Route>
+          <Route path='/sign-in'>
+            <SignIn />
+          </Route>
+          <Route path='/contact'>
+            <Contact />
+          </Route>
+        </Switch>
+      </ProductContextProvider>
+    </>
   );
 }
 

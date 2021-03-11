@@ -1,69 +1,58 @@
 import React, { useContext } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import { ProductContext } from "../ProductContext";
-import Cart from "../Cart";
+import styles from "./Header.module.css";
+import NavLinks from "../NavRoutes/NavLinks";
+import SignInSignUp from "../SignInSignUp/SignInSignUp";
+import cartLogo from "../../icon/cartColor.png";
 
 const Header = () => {
   const { cartItems } = useContext(ProductContext);
-  const handleNav = () => {
-    const navopen = document.querySelector(".menu_container");
-    navopen.classList.toggle("is-open");
-  };
-
-  const handleCart = () => {
-    const cartOpen = document.querySelector(".cart_container");
-    cartOpen.classList.toggle("cart-open");
-  };
+  console.log();
   return (
-    <div className='header__nav'>
-      <div className='header_container'>
-        <div className='nav_container'>
-          <div className='nav_icon' onClick={handleNav}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div className='header_logo'>Market Place</div>
-        </div>
+    <>
+      <div className={styles.wrapper}>
+        <div className={styles.header__nav}>
+          <div className={styles.header_container}>
+            <div className={styles.nav_links}>
+              {" "}
+              <NavLinks />
+            </div>
+            <div className={styles.header_logo}>Market Place</div>
 
-        <div className='cart__signin'>
-          <div>Sign In</div>
-          <div className='cart' onClick={handleCart}>
-            Cart {cartItems.length}
+            <div className={styles.cart}>
+              {
+                <Link to='/cart' className={styles.cart_link}>
+                  {" "}
+                  <img src={cartLogo} alt='cart' />
+                  <span className={styles.cart_length}>{cartItems.length}</span>
+                </Link>
+              }
+            </div>
+          </div>
+          <div className={styles.wrap}>
+            <div className={styles.search}>
+              <input
+                type='search'
+                placeholder='Search Market Place'
+                className={styles.searchTerm}
+              />
+
+              <button className={styles.searchButton} type='submit'>
+                {" "}
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  className={styles.search_icon}
+                />
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div className='search__logo'>
-        <input
-          className='search_input'
-          type='search'
-          placeholder='Search Market Place'
-        />
-      </div>
-      <div className='cart_container'>
-        <div className='header_logo'>Market Place</div>
-        <button onClick={handleCart} className='cart__close'>
-          X
-        </button>
-        <Cart />
-      </div>
-
-      <nav className='menu_container large'>
-        <ul className='menu'>
-          <li>
-            <a href='/#'>Home</a>{" "}
-          </li>
-          <li>
-            <a href='/#'>Products</a>{" "}
-          </li>
-          <li>
-            <a href='/#'>Collections</a>{" "}
-          </li>
-          <li>
-            <a href='/#'>Contact</a>{" "}
-          </li>
-        </ul>
-      </nav>
-    </div>
+      <SignInSignUp />
+    </>
   );
 };
 

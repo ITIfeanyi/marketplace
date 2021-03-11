@@ -1,0 +1,70 @@
+.signIn__signUp__container {
+  padding: 1rem;
+  font-size: 1.1rem;
+  display: block;
+  text-align: center;
+  border-bottom: 2px solid #eee;
+  letter-spacing: 0.9;
+  background-color: white;
+}
+.signIn__signUp {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+.signIn__signUp button {
+  margin-top: 0.7rem;
+  padding: 0.6rem 1.7rem;
+  color: black;
+  background-color: rgb(241, 220, 28);
+  border: 0;
+  border-radius: 5px;
+}
+
+/* sign in */
+
+.signIn_subcontainer {
+  display: flex;
+  width: 80%;
+  margin: 1rem auto;
+  justify-content: space-between;
+}
+
+form {
+  width: 92%;
+  margin: 0.5rem auto;
+}
+
+.form_container {
+  display: flex;
+  flex-flow: column;
+  padding: 1rem;
+}
+
+.form_email,
+.form_name,
+.form_password {
+  display: flex;
+  flex-flow: column;
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+.form_btn_container {
+  width: 80%;
+  margin: 0 auto;
+}
+.form_btn {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: rgb(241, 220, 28);
+  border: 0;
+  border-radius: 5px;
+}
+.link {
+  color: rgb(56, 138, 141);
+}
+.accept {
+  font-style: italic;
+  font-size: 0.9rem;
+}
