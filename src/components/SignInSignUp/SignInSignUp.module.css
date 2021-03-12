@@ -63,8 +63,15 @@ form {
 }
 .link {
   color: rgb(56, 138, 141);
+  font-size: 1rem;
 }
 .accept {
   font-style: italic;
   font-size: 0.9rem;
+}
+
+.error_msg {
+  color: red;
+  font-size: 0.7rem;
+  font-weight: bold;
 }

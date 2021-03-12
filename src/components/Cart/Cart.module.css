@@ -17,7 +17,7 @@
 .cart_empty {
   width: 90%;
   font-size: 1rem;
-  margin-top: 2rem;
+  margin: 3rem auto;
   text-align: center;
   color: rgb(100, 66, 66);
 }

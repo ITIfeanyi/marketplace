@@ -1,10 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import styles from "./Cart.module.css";
 import { ProductContext } from "../ProductContext";
+import EmptyFooter from "../Footer/EmptyFooter";
 import EmptyHeader from "../Header/EmptyHeader";
+
 import SignInSignUp from "../SignInSignUp/SignInSignUp";
+import { UserContext } from "../UserContext";
 
 const Cart = () => {
+  const { hasAccount } = useContext(UserContext);
   const { cartItems, addItem, removeItem } = useContext(ProductContext);
   useEffect(() => {
     document.title = "Cart | MarketPlace";
@@ -15,7 +19,7 @@ const Cart = () => {
   return (
     <>
       <EmptyHeader />
-      <SignInSignUp />
+      {hasAccount ? "" : <SignInSignUp />}
       <div className={styles.cart_container}>
         <div className={styles.cart_subcontainer}>
           <div className={styles.cart_empty}>
@@ -62,13 +66,14 @@ const Cart = () => {
                 </div>
                 <div className={styles.checkout_box}>
                   <button>Checkout</button>
-                  <p>Please login to checkout</p>
+                  {hasAccount ? "" : <p>Please login to checkout</p>}{" "}
                 </div>
               </>
             )}
           </div>
         </div>
       </div>
+      <EmptyFooter />
     </>
   );
 };

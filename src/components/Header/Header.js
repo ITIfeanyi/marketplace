@@ -7,10 +7,13 @@ import styles from "./Header.module.css";
 import NavLinks from "../NavRoutes/NavLinks";
 import SignInSignUp from "../SignInSignUp/SignInSignUp";
 import cartLogo from "../../icon/cartColor.png";
+import { UserContext } from "../UserContext";
+import Logout from "../Logout/Logout";
 
 const Header = () => {
   const { cartItems } = useContext(ProductContext);
-  console.log();
+  const { hasAccount, user } = useContext(UserContext);
+
   return (
     <>
       <div className={styles.wrapper}>
@@ -51,7 +54,11 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <SignInSignUp />
+      {hasAccount ? (
+        <div className={styles.userConfirmed}>Hello, {user.email} </div>
+      ) : (
+        <SignInSignUp />
+      )}
     </>
   );
 };

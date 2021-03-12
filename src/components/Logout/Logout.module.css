@@ -1,0 +1,11 @@
+.logout {
+  width: 50%;
+  margin: 0.4rem auto;
+}
+
+.logout button {
+  padding: 0.3rem;
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+}

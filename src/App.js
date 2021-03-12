@@ -6,31 +6,34 @@ import ProductContextProvider from "./components/ProductContext";
 import SignUp from "./components/SignInSignUp/SignUp";
 import SignIn from "./components/SignInSignUp/SignIn";
 import Contact from "./components/ContactPage/Contact";
+import UserContextProvider from "./components/UserContext";
 
 function App() {
   return (
     <>
-      <ProductContextProvider>
-        <div className='App'></div>
+      <UserContextProvider>
+        <ProductContextProvider>
+          <div className='App'></div>
 
-        <Switch>
-          <Route exact path='/'>
-            <Product />
-          </Route>
-          <Route path='/cart'>
-            <Cart />
-          </Route>
-          <Route path='/sign-up'>
-            <SignUp />
-          </Route>
-          <Route path='/sign-in'>
-            <SignIn />
-          </Route>
-          <Route path='/contact'>
-            <Contact />
-          </Route>
-        </Switch>
-      </ProductContextProvider>
+          <Switch>
+            <Route exact path='/'>
+              <Product />
+            </Route>
+            <Route path='/cart'>
+              <Cart />
+            </Route>
+            <Route path='/sign-up'>
+              <SignUp />
+            </Route>
+            <Route path='/sign-in'>
+              <SignIn />
+            </Route>
+            <Route path='/contact'>
+              <Contact />
+            </Route>
+          </Switch>
+        </ProductContextProvider>
+      </UserContextProvider>
     </>
   );
 }

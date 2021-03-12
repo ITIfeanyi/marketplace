@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
@@ -8,11 +8,13 @@ import {
 
 import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
+import Logout from "../Logout/Logout";
+import { UserContext } from "../UserContext";
 
 const Footer = () => {
   const [footerTitle1, setFooterTitle1] = useState(false);
   const [footerTitle2, setFooterTitle2] = useState(false);
-
+  const { user } = useContext(UserContext);
   const handleFooterTitle1 = () => {
     setFooterTitle1(!footerTitle1);
   };
@@ -93,6 +95,7 @@ const Footer = () => {
         <small>Privacy </small>
         <small> Cookie Policy </small>
       </div>
+      <div className={styles.footerLogout}>{user && <Logout />}</div>
       <div className={styles.footer3_section}>
         <small>
           &copy; 2020 All right reserved, made with{" "}
