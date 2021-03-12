@@ -75,7 +75,6 @@ const SignIn = () => {
               </div>
             </form>
           </div>
-          <EmptyFooter />
         </div>
       )}
     </>

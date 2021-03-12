@@ -7,8 +7,13 @@ const ProductContextProvider = ({ children }) => {
   const [isLoading, setIsloading] = useState(true);
   const [isError, setIsError] = useState("");
   const [isLogin, setIsLogin] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(
+    JSON.parse(localStorage.getItem("market-place")) || []
+  );
 
+  useEffect(() => {
+    localStorage.setItem("market-place", JSON.stringify(cartItems));
+  });
   const addItem = (products) => {
     const exist = cartItems.find((x) => x.id === products.id);
 

@@ -68,7 +68,6 @@ const SignUp = () => {
               </div>
             </form>
           </div>
-          <EmptyFooter />
         </div>
       )}
     </>
