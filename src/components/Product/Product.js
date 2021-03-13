@@ -12,15 +12,17 @@ const Product = () => {
   });
   return (
     <>
-      <div className={styles.product_container}>
-        <Header />
+      <Header />
 
+      <div className={styles.product_container}>
         {isLoading ? (
           <CssLoader />
         ) : (
-          products.map((product) => (
-            <ProductList key={product.id} product={product} />
-          ))
+          <div className={styles.product_subcontainer}>
+            {products.map((product) => (
+              <ProductList key={product.id} product={product} />
+            ))}
+          </div>
         )}
       </div>
       <Footer />

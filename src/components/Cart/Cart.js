@@ -73,7 +73,6 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <EmptyFooter />
     </>
   );
 };

@@ -7,9 +7,9 @@ const ProductList = ({ product }) => {
   return (
     <>
       {
-        <div className={styles.productList_container}>
+        <div className={styles.productList_container} >
           <div className={styles.productList_subcontainer}>
-            <div>
+            <div> 
               <img src={product.image} alt={product.title} />
             </div>
             <div>

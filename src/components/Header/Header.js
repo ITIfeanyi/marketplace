@@ -8,7 +8,6 @@ import NavLinks from "../NavRoutes/NavLinks";
 import SignInSignUp from "../SignInSignUp/SignInSignUp";
 import cartLogo from "../../icon/cartColor.png";
 import { UserContext } from "../UserContext";
-import Logout from "../Logout/Logout";
 
 const Header = () => {
   const { cartItems } = useContext(ProductContext);

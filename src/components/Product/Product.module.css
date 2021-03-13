@@ -1,21 +1,33 @@
 .product_container {
   margin-top: 1rem;
-  width: 100%;
   margin: 0rem auto;
   background-color: white;
 }
 .productList_container {
-  width: 98%;
+  width: 100%;
   margin: auto;
   border-bottom: 1px solid #ccc;
+  margin-top: 1rem;
 }
 @media (min-width: 33.5em) {
   .productList_container {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .product_subcontainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
   .productList_container .productList_subcontainer {
-    width: 96%;
+    width: 90%;
+    height: 12rem;
+  }
+}
+@media (min-width: 55em) {
+  .product_subcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 .productList_subcontainer {
@@ -34,7 +46,7 @@
 }
 .category {
   color: rgb(167, 166, 166);
-  padding: 0.4rem;
+  padding: 0.1rem;
 }
 .discount_price {
   margin-top: 0.5rem;
