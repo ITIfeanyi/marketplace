@@ -6,7 +6,7 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.css"; 
 import { Link } from "react-router-dom";
 import Logout from "../Logout/Logout";
 import { UserContext } from "../UserContext";
